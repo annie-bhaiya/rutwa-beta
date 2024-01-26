@@ -1,0 +1,69 @@
+{
+    "gym-hoodie-1": {
+      "id": "gym-hoodie-1",
+      "title": "Train insane or remain the same - Gym Hoodie",
+      "thumbnail": "https://supplier-prod-temp-files.s3.ap-southeast-1.amazonaws.com/products-upload/cataloging/1697486864059/man-hd-0023.png",
+      "photos":{
+        "0": {
+            "url": "https://supplier-prod-temp-files.s3.ap-southeast-1.amazonaws.com/products-upload/cataloging/1697486864059/man-hd-0023.png"
+        }
+      },
+      "brand": "Rutwa",
+      "group": "Group 01",
+      "desc": "Elevate your winter wardrobe with these stylish full-sleeved sweatshirts featuring hoods. Meticulously crafted from imported, stretchy fabric, they offer both comfort and trendiness for both men and women. Available in a range of fashionable colors, these sweatshirts are perfect for the chilly winter season. Trust in quality and coziness.",
+      "size": ["S", "M", "L", "XL", "XXL", "XXXL"],
+      "price": 649,
+      "wrong-price": 628,
+      "mrp": 799,
+      "net-weight": 450,
+      "country": "India",
+      "packer": "Rutwa - Sector-23A\n121005 Faridabad HR\nIndia\nFaridabad, Haryana 121005 India",
+      "manufacturer": "Rutwa - Sector-23A\n121005 Faridabad HR\nIndia\nFaridabad, Haryana 121005 India",
+      "closure": "Pull On",
+      "color": "Black",
+      "fabric": "Fleece",
+      "collar": "Collar",
+      "quantity": 1,
+      "sleeve": "Long Sleeves",
+      "type": "Hooded",
+      "variants": [
+        {
+          "id": "gym-hoodie-1-s-black",
+          "size": "S",
+          "chest": 40,
+          "length": 26
+        },
+        {
+          "id": "gym-hoodie-1-m-black",
+          "size": "M",
+          "chest": 42,
+          "length": 27
+        },
+        {
+          "id": "gym-hoodie-1-l-black",
+          "size": "L",
+          "chest": 44,
+          "length": 28
+        },
+        {
+          "id": "gym-hoodie-1-xl-black",
+          "size": "XL",
+          "chest": 46,
+          "length": 29
+        },
+        {
+          "id": "gym-hoodie-1-xxl-black",
+          "size": "XXL",
+          "chest": 48,
+          "length": 30
+        },
+        {
+          "id": "gym-hoodie-1-xxxl-black",
+          "size": "XXXL",
+          "chest": 50,
+          "length": 31
+        }
+      ]
+    }
+  }
+  

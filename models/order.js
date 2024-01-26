@@ -1,0 +1,70 @@
+// Require the functions you need from the SDKs you need
+const { initializeApp } = require("firebase/app");
+const { getDatabase, ref, child, push, update, onValue, remove, get, set } = require('firebase/database')
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC4plBV-fHAMVskez6ehxPDNbEhvMbaFoQ",
+  authDomain: "rutwa-in.firebaseapp.com",
+  databaseURL: "https://rutwa-in-default-rtdb.firebaseio.com",
+  projectId: "rutwa-in",
+  storageBucket: "rutwa-in.appspot.com",
+  messagingSenderId: "1006936828276",
+  appId: "1:1006936828276:web:6fd09b43ccb6a3bde3e421",
+  measurementId: "G-6R3F77FJ65"
+};
+
+// Initialize Firebase
+const fire = initializeApp(firebaseConfig);
+const db = getDatabase(fire);
+
+function order(uid, data){
+    ordersRef = ref(db, '/users/'+uid+'/orders/')
+    push(ordersRef, data)
+    data.products.forEach(p => {
+        productRef=ref(db, '/products/'+p.id+'/orders')
+        get(productRef).then(snap=>{
+            if(snap.exists()){
+                set(productRef, snap.val()+p.qty)
+            }else{
+                set(productRef, p.qty)
+            }
+        })
+    });
+}
+
+function cancelOrder(uid, oid){
+    var orderRef = ref(db, '/users/'+uid+'/orders/'+oid)
+    var orderProductsRef = ref(db, '/users/'+uid+'/orders/'+oid+'/products/')
+    get(orderProductsRef).then(prod=>{
+        prod.val().forEach(p=>{
+            productRef=ref(db, '/products/'+p['id']+'/orders')
+            get(productRef).then(snap=>{
+            if(snap.exists()){
+                set(productRef, snap.val()-p.qty)
+                remove(orderRef)
+            }
+        })
+        })
+    })
+   
+}
+
+function getOrders(uid){
+    var dbRef = ref(db, '/users/'+uid+'/orders/')
+    get(dbRef).then((snapshot)=>{
+       snapshot.forEach((child)=>{
+        var a=[]
+        a.push(child.val());
+        return a;
+        
+       })
+    });
+}
+
+// cancelOrder('lyPelJHQQybyX49zuMLBWsZOTXk1','-NeQppYCC9hW10uOOgaL')
+// order('lyPelJHQQybyX49zuMLBWsZOTXk1', {
+//     products: [{id:'-NeQJiBdSXceDKZK25Ve', qty:7}]
+// })
+
+var orders = getOrders('lyPelJHQQybyX49zuMLBWsZOTXk1')
+console.log(orders)

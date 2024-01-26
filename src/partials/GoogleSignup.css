@@ -1,0 +1,18 @@
+.btn-google {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 0.1px; /* Google Blue */
+    background-color: #FFFFFF; /* White */
+    background-image: url('./google-logo.png');
+    background-size: 70%; /* Adjust as needed */
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-google:hover {
+    background-color: #E8F0FE; /* Light Blue */
+    border-color: #E8F0FE; /* Light Blue */
+}
